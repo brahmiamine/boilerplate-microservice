@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true, // Active les décorateurs
+    "emitDecoratorMetadata": true, // Génère des métadonnées nécessaires pour TypeORM
+    "target": "ES2020", // Version JavaScript cible
+    "module": "CommonJS", // Format du module
+    "strictPropertyInitialization": false, // Empêche les erreurs liées à l'initialisation des propriétés
+    "esModuleInterop": true, // Pour les modules ES
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"]
+}

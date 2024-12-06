@@ -1,0 +1,36 @@
+# Ignorer les fichiers Node.js inutiles
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignorer les fichiers de build locaux
+dist
+build
+
+# Ignorer les fichiers sensibles
+.env
+.env.local
+
+# Ignorer les fichiers de l'éditeur
+.vscode
+.idea
+*.swp
+
+# Ignorer les logs
+logs
+*.log
+
+# Ignorer Docker Compose override
+docker-compose.override.yml
+
+# Ignorer les fichiers temporaires
+tmp
+.cache
+
+# Ignorer les uploads locaux
+uploads
+
+# Ignorer les fichiers Git
+.git
+.gitignore

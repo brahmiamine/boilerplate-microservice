@@ -1,0 +1,18 @@
+meta {
+  name: updateProduct
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:5000/api/v1/products/67531bb88bfeeba4b08ab7b4
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  name: dfdfdfiiiiiiiiiii
+  image: @file(C:\Users\mbrah\OneDrive\Bureau\profile-pic.png)
+  description: dfdf
+  price: 20
+}

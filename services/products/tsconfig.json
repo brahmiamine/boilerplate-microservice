@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                   // ES6 ou supérieur est requis
+      "module": "commonjs",              // Vous pouvez aussi utiliser "ESNext" si nécessaire
+      "strict": true,                    // Active toutes les options strictes
+      "esModuleInterop": true,           // Pour importer les modules CommonJS
+      "experimentalDecorators": true,    // Active les décorateurs
+      "emitDecoratorMetadata": true,     // Génère les métadonnées nécessaires pour les décorateurs
+      "outDir": "./dist",                // Dossier de sortie pour le JS compilé
+      "rootDir": "./src" ,
+                      // Dossier source des fichiers TS
+    },
+    "include": ["src/**/*.ts"],          // Inclure tous les fichiers TypeScript
+    "exclude": ["node_modules"]          // Exclure le dossier node_modules
+  }
+  

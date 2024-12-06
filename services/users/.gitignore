@@ -1,0 +1,41 @@
+# Node.js
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+
+# Build outputs
+dist
+build
+
+# Environnements locaux
+.env
+.env.local
+
+# Docker
+docker-compose.override.yml
+docker-compose.yaml
+
+# Editeurs et IDE
+.vscode/
+.idea/
+*.swp
+
+# Temp Files
+tmp/
+.cache/
+
+# Fichiers de configuration utilisateur
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.vcxproj
+.DS_Store
+
+# Uploads locaux
+uploads/
