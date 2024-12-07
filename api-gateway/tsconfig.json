@@ -6,7 +6,7 @@
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
-   "typeRoots": ["./node_modules/@types", "./src"]
+    "typeRoots": ["./node_modules/@types"] // Ne spécifie que node_modules/@types ici
     
     
   },

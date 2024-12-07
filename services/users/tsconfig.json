@@ -7,7 +7,7 @@
     "strictPropertyInitialization": false, // Empêche les erreurs liées à l'initialisation des propriétés
     "esModuleInterop": true, // Pour les modules ES
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types", "./src"]
+    "typeRoots": ["./node_modules/@types"] // Ne spécifie que node_modules/@types ici
   },
   "include": ["src/**/*.ts", "src/express.d.ts"], 
   "exclude": ["node_modules", "**/*.test.ts"]

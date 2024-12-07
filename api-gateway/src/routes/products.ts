@@ -1,26 +1,84 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import axios from 'axios';
 
 const router = Router();
 const PRODUCTS_SERVICE_URL = process.env.PRODUCTS_SERVICE_URL || 'http://localhost:5000';
 
 // GET all products
-router.get('/', async (req, res) => {
+router.get('/', async (req: Request, res: Response) => {
   try {
-    // Appeler le service `products`
     const response = await axios.get(`${PRODUCTS_SERVICE_URL}/api/v1/products`, {
-      headers: { Authorization: req.headers['authorization'] }, // Transmettre le token JWT
+      headers: { Authorization: req.headers['authorization'] },
     });
-
-    // Retourner la réponse du service `products`
     res.status(response.status).json(response.data);
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      // Vérifier si l'erreur provient d'Axios et transmettre les détails au client
       res.status(error.response?.status || 500).json(error.response?.data || { message: 'Unknown error from product service' });
     } else {
-      // Gérer les erreurs internes de l'API Gateway
-      console.error((error as Error).message);
+      res.status(500).json({ message: 'Error communicating with product service' });
+    }
+  }
+});
+
+// GET product by ID
+router.get('/:id', async (req: Request, res: Response) => {
+  try {
+    const response = await axios.get(`${PRODUCTS_SERVICE_URL}/api/v1/products/${req.params.id}`, {
+      headers: { Authorization: req.headers['authorization'] },
+    });
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      res.status(error.response?.status || 500).json(error.response?.data || { message: 'Unknown error from product service' });
+    } else {
+      res.status(500).json({ message: 'Error communicating with product service' });
+    }
+  }
+});
+
+// POST new product
+router.post('/', async (req: Request, res: Response) => {
+  try {
+    const response = await axios.post(`${PRODUCTS_SERVICE_URL}/api/v1/products`, req.body, {
+      headers: { Authorization: req.headers['authorization'] },
+    });
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      res.status(error.response?.status || 500).json(error.response?.data || { message: 'Unknown error from product service' });
+    } else {
+      res.status(500).json({ message: 'Error communicating with product service' });
+    }
+  }
+});
+
+// DELETE product by ID
+router.delete('/:id', async (req: Request, res: Response) => {
+  try {
+    const response = await axios.delete(`${PRODUCTS_SERVICE_URL}/api/v1/products/${req.params.id}`, {
+      headers: { Authorization: req.headers['authorization'] },
+    });
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      res.status(error.response?.status || 500).json(error.response?.data || { message: 'Unknown error from product service' });
+    } else {
+      res.status(500).json({ message: 'Error communicating with product service' });
+    }
+  }
+});
+
+// PUT (update) product by ID
+router.put('/:id', async (req: Request, res: Response) => {
+  try {
+    const response = await axios.put(`${PRODUCTS_SERVICE_URL}/api/v1/products/${req.params.id}`, req.body, {
+      headers: { Authorization: req.headers['authorization'] },
+    });
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      res.status(error.response?.status || 500).json(error.response?.data || { message: 'Unknown error from product service' });
+    } else {
       res.status(500).json({ message: 'Error communicating with product service' });
     }
   }
