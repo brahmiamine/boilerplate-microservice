@@ -7,8 +7,11 @@ import {
   deleteProductByIdController,
   updateProductByIdController,
 } from "../controllers/product.controller";
+import { validateJwt } from "../middlewares/validateApiKey";
 
 const router = express.Router();
+
+router.use(validateJwt);
 
 // Routes CRUD pour les produits
 router.post("/", upload.single("image"), createProductController);

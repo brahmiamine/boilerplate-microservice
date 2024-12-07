@@ -1,3 +1,4 @@
+/// <reference path="./express.d.ts" />
 import { app } from "./app";
 import { connectDb } from "./infra/db";
 

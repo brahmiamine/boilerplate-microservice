@@ -8,9 +8,9 @@
       "emitDecoratorMetadata": true,     // Génère les métadonnées nécessaires pour les décorateurs
       "outDir": "./dist",                // Dossier de sortie pour le JS compilé
       "rootDir": "./src" ,
-                      // Dossier source des fichiers TS
+      "typeRoots": ["./node_modules/@types", "./src"]
     },
-    "include": ["src/**/*.ts"],          // Inclure tous les fichiers TypeScript
+    "include": ["src/**/*.ts", "src/express.d.ts"],         // Inclure tous les fichiers TypeScript
     "exclude": ["node_modules"]          // Exclure le dossier node_modules
   }
   
