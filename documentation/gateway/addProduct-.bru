@@ -1,15 +1,22 @@
 meta {
-  name: getAllProducts
+  name: addProduct-
   type: http
-  seq: 2
+  seq: 5
 }
 
-get {
-  url: http://localhost:3000/api/v1/products
-  body: none
+post {
+  url: http://localhost:5000/api/v1/products
+  body: multipartForm
   auth: bearer
 }
 
 auth:bearer {
   token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZjgyZThiLWQ2NGUtNDVhMi04YzM0LWM4ZTA3MWU2NTJhMiIsImVtYWlsIjoieWJAYnJhaG1pdHQiLCJjcmVhdGVkQXQiOiIyMDI0LTEyLTA3VDA5OjA3OjA5LjA1M1oiLCJpYXQiOjE3MzM1NjYwNTUsImV4cCI6MTczMzU2OTY1NX0.FDQTuwfRUEvGWY7aE60y3nMsyeG89nnkfuUCHfDQ9wM
+}
+
+body:multipart-form {
+  name: df
+  image: @file(C:\Users\mbrah\OneDrive\Bureau\profile-pic.png)
+  description: dfdf
+  price: 20
 }

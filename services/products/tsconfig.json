@@ -8,7 +8,9 @@
     "emitDecoratorMetadata": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "typeRoots": ["./node_modules/@types"] // Ne spécifie que node_modules/@types ici
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "dotenv"]
+
   },
   "include": ["src/**/*.ts", "src/express.d.ts"],
   "exclude": ["node_modules"]
