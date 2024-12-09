@@ -1,5 +1,5 @@
-import { AddressRepository } from '../../ports/address/addresseRepository';
-import { Address } from '../../domain/address/address';
+import { AddressRepository } from '../../ports/address/AddresseRepository';
+import { Address } from '../../domain/address/Address';
 
 export class AddressUseCases {
     constructor(private addressRepository: AddressRepository) { }
@@ -8,15 +8,24 @@ export class AddressUseCases {
         return this.addressRepository.createAddress(address);
     }
 
-    async getAddressesByUserId(id: string): Promise<Address[]> {
-        return this.addressRepository.getAddressesByUserId(id);
+    async getAllAddresses(): Promise<Address[]> {
+        return this.addressRepository.getAllAddresses();
     }
+
+    async getAddressesById(id: string): Promise<Address> {
+        return this.addressRepository.getAddressesById(id);
+    }
+
+    async getAddressesByUserId(userId: string): Promise<Address[]> {
+        return this.addressRepository.getAddressesByUserId(userId);
+    }
+
 
     async updateAddress(address: Address): Promise<Address> {
         return this.addressRepository.updateAddress(address);
     }
 
-    async deleteAddress(id: number): Promise<void> {
+    async deleteAddress(id: string): Promise<void> {
         await this.addressRepository.deleteAddress(id);
     }
 }

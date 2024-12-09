@@ -1,9 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { User } from './User';
 
 @Entity("addresses")
 export class AddressEntity {
     @PrimaryGeneratedColumn("uuid")
-    id: number;
+    id: string;
 
     @Column()
     street: string;
@@ -20,7 +21,11 @@ export class AddressEntity {
     @Column({ nullable: true })
     zipCode: string;
 
-    @Column()
-    userId: string;
+    @ManyToOne(() => User, (user) => user.addresses, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'userId' }) // Correspond à la colonne user_id dans la table
+    user: User;
+
+    @Column({ type: 'uuid' })
+    userId: string; // Clé étrangère
 
 }

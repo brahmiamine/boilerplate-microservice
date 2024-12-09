@@ -1,8 +1,10 @@
-import { Address } from "../../domain/address/address";
+import { Address } from "../../domain/address/Address";
 
 export interface AddressRepository {
     createAddress(address: Address): Promise<Address>;
-    getAddressesByUserId(id: string): Promise<Address[]>;
+    getAllAddresses(): Promise<Address[]>;
+    getAddressesByUserId(userId: string): Promise<Address[]>;
+    getAddressesById(id: string): Promise<Address>;
     updateAddress(address: Address): Promise<Address>;
-    deleteAddress(id: number): Promise<void>;
+    deleteAddress(id: string): Promise<void>;
 }

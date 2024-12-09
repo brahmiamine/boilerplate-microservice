@@ -8,7 +8,7 @@ export class TypeORMUserRepository implements UserRepository {
   private userRepository = AppDataSource.getRepository(User);
 
   async getAllUsers(): Promise<User[]> {
-    return await this.userRepository.find(); // Récupère tous les utilisateurs
+    return await this.userRepository.find();
   }
 }
 
